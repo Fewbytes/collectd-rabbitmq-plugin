@@ -82,6 +82,8 @@ def plugin_config(collectd_config):
 			else:
 				raise RuntimeError("MonitorQueue expects 1 or 2 params, no more.")
 			plugin_config['monitored_queues'].append((vhost, queue))
+		elif child.key.lower() == 'verbose':
+			pass
 		else:
 			raise RuntimeError("Unknown config item %s" % child.key)
 	
